@@ -174,7 +174,7 @@ $submitbutton= $_POST['submit'];
 
 <div class="resalts">
 <?php
-
+ /* put your derectory here for your webpages if needed you may need the ip address if not put in root derectory on linux.*/
 $directory = "/webpages/";
 
 

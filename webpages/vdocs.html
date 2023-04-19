@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<!-- VDocs is an online word processor that lets you create and format documents right in your web browser—no special software is required. -->
+
+
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>VDocs is an online word processor that lets you create and format documents right in your web browser—no special software is required.</title>
+<link rel="stylesheet" href="http://192.168.1.4/webpages/Vdocs/style.css">
+<link
+  rel="stylesheet"
+  href="http://192.168.1.4/webpages/VDocs/editor.css"
+/>
+<!-- Google Fonts -->
+<link
+  href="http://192.168.1.4/webpages/VDocs/textedit.css"
+  rel="stylesheet"
+/>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="container">
+  <img src="http://192.168.1.4/webpages/VDocs/vdoc.png" width="70" height="70">
+  <div id="title">
+    <input id="title_field"type="text" placeholder="Untitled" value="">
+  </div>
+  <hr></hr>
+
+  <div class="container">
+    <div class="options">
+      <!-- Text Format -->
+      <button id="bold" class="option-button format">&#66;</button>
+
+      </button>
+    <button id="italic" class="option-button format"><i>I</i></button>
+
+      </button>
+      <button id="underline" class="option-button format"><u>U</u></button>
+
+      </button>
+      <button id="strikethrough" class="option-button format"><s>S</s></button>
+
+      </button>
+      <button id="superscript" class="option-button script">X&#185;</button>
+
+      </button>
+      <button id="subscript" class="option-button script">X&#8322;</button>
+      </button>
+
+      <!-- List -->
+      <button id="insertOrderedList" class="option-button">&#9776;</button>
+      </button>
+      <button id="insertUnorderedList" class="option-button">&#9778;</button>
+      </button>
+
+      <!-- Undo/Redo -->
+      <button id="undo" class="option-button">&#10226;</button>
+
+      </button>
+      <button id="redo" class="option-button">&#10227;</button>
+
+
+      </button>
+
+      <!-- Link -->
+      <button id="createLink" class="adv-option-button">&#9901;</button>
+
+      </button>
+      <button id="unlink" class="option-button">&#9900;</button>
+
+      </button>
+
+      <!-- Alignment -->
+      <button id="justifyLeft" class="option-button align">
+      &#8592;
+      </button>
+      <button id="justifyCenter" class="option-button align">
+        &#8597;
+      </button>
+      <button id="justifyRight" class="option-button align">
+    &#8594;
+      </button>
+      <button id="justifyFull" class="option-button align">&#8596;</button>
+
+      </button>
+      <button id="indent" class="option-button spacing">
+  &#8614;
+      </button>
+      <button id="outdent" class="option-button spacing">
+  &#8612;
+      </button>
+
+      <!-- Headings -->
+      <select id="formatBlock" class="adv-option-button">
+        <option value="H1">H1</option>
+        <option value="H2">H2</option>
+        <option value="H3">H3</option>
+        <option value="H4">H4</option>
+        <option value="H5">H5</option>
+        <option value="H6">H6</option>
+      </select>
+
+      <!-- Font -->
+      <select id="fontName" class="adv-option-button"></select>
+      <select id="fontSize" class="adv-option-button"></select>
+
+      <!-- Color -->
+      <div class="input-wrapper">
+        <input type="color" id="foreColor" class="adv-option-button" />
+        <label for="foreColor">Font Color</label>
+      </div>
+      <div class="input-wrapper">
+        <input type="color" id="backColor" class="adv-option-button" />
+        <label for="backColor">Highlight Color</label>
+      </div>
+      <a id="save" target="text" download="document.html" href="#" onclick="save();" class="button" >&#8659;</a>
+    </div>
+
+
+
+
+
+    <script>
+function save(){
+  var note = document.getElementById('text').innerHTML;
+  note = note.replace(/(<div><br>)*<\/div>/g, '\n');
+  note = note.replace(/<div>/g, '');
+  /* replaces some html entities */
+  note = note.replace(/&nbsp;/g, ' ');
+  note = note.replace(/&amp;/g, '&');
+  note = note.replace(/&lt;/g, '<');
+  note = note.replace(/&gt;/g, '>');
+  document.getElementById('save').setAttribute(
+    'href',
+    'data:Content-type: text/plain, ' + escape(note)
+  );
+}
+</script>
+
+
+
+
+
+  </div>
+  </div>
+<div class="spacer"></div>
+
+  <div id="text" contenteditable="true"></div>
+  </div>
+
+<div class="spacer"></div>
+<!-- partial -->
+<script  src="http://192.168.1.4/webpages/VDocs/script.js"></script>
+
+</body>
+</html>
